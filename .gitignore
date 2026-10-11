@@ -1,0 +1,32 @@
+# Environnement virtuel
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Fichiers générés par build_index.py (à recréer avec python build_index.py)
+data/index.faiss
+data/clean.csv
+
+# Cache des modèles (au cas où il serait téléchargé dans le projet)
+models/
+.cache/
+*.bin
+*.safetensors
+
+# Variables d'environnement et secrets
+.env
+
+# Notebooks
+.ipynb_checkpoints/
+
+# IDE et système
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
