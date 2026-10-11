@@ -4,7 +4,17 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from sentence_transformers import SentenceTransformer
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(title="Moteur de recherche sémantique")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
+
 
 model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
 index = faiss.read_index("data/index.faiss")
